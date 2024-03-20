@@ -154,9 +154,8 @@ DispatchQueue.global().async {
 
 // Д.З. Исправленная 3 семинара
 
-### NetworkService.swift:
-
 import Foundation
+import UIKit
 
 class NetworkService {
     
@@ -215,12 +214,8 @@ struct GroupsResponse: Codable {
 }
 
 struct PhotosResponse: Codable {
-    // Структура модели для списка фотографий
+    // Структура модели для списка фото
 }
-
-### FriendsViewController.swift:
-
-import UIKit
 
 class FriendsViewController: UIViewController {
     
@@ -239,14 +234,9 @@ class FriendsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 3. Запрос на список друзей
         networkService.getFriendsList(token: token)
     }
 }
-
-### GroupsViewController.swift:
-
-import UIKit
 
 class GroupsViewController: UIViewController {
     
@@ -265,14 +255,9 @@ class GroupsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 4. Запрос на список групп
         networkService.getGroupsList(token: token)
     }
 }
-
-### PhotosViewController.swift:
-
-import UIKit
 
 class PhotosViewController: UIViewController {
     
@@ -291,7 +276,6 @@ class PhotosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 5. Запрос на список фотографий
         networkService.getPhotosList(token: token)
     }
 }
